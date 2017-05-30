@@ -1,0 +1,19 @@
+{
+  "name": "depeche",
+  "version": "1.0.0",
+  "description": "My own personal Models",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/**.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "extend": "^3.0.1",
+    "pg": "^6.2.3"
+  },
+  "devDependencies": {
+    "tap-nyan": "^1.1.0",
+    "tape": "^4.6.3"
+  }
+}
