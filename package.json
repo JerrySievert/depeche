@@ -6,7 +6,7 @@
   "scripts": {
     "test": "tape test/**.js"
   },
-  "author": "",
+  "author": "Jerry Sievert <code@legitimatesounding.com>",
   "license": "MIT",
   "dependencies": {
     "extend": "^3.0.1",
@@ -15,5 +15,12 @@
   "devDependencies": {
     "tap-nyan": "^1.1.0",
     "tape": "^4.6.3"
+  },
+  "bugs": {
+    "url": "https://github.com/JerrySievert/depeche/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JerrySievert/depeche.git"
   }
 }
