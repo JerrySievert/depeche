@@ -59,6 +59,33 @@ test('select query from model with select override', function (t) {
   t.equal(sql, 'SELECT id, LOWER(some_field) AS some_field, some_other_field, created_date FROM override_model', 'override select query is correct');
 });
 
+test('select query from model with where_clause', function (t) {
+  t.plan(1);
+
+  var model = new base_model();
+  model.where_clause('1 = 1');
+
+  var builder = new query();
+
+  var sql = builder.select(model);
+
+  t.equal(sql, 'SELECT id, some_field, some_other_field, created_date FROM base_model WHERE 1 = 1', 'where_clause select query is correct');
+});
+
+test('select query from model with where_clause and other where', function (t) {
+  t.plan(1);
+
+  var model = new base_model();
+  model.where_clause('1 = 1');
+  model.where('some_field').eq(1);
+
+  var builder = new query();
+
+  var sql = builder.select(model);
+
+  t.equal(sql, 'SELECT id, some_field, some_other_field, created_date FROM base_model WHERE some_field=$1 AND 1 = 1', 'where_clause select query is correct with additional where');
+});
+
 test('upsert query from base model', function (t) {
   t.plan(1);
 
