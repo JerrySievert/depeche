@@ -160,3 +160,16 @@ test('update query from override model', function (t) {
 
   t.equal(sql, 'UPDATE override_model SET some_field = UPPER($1), some_other_field = $2, created_date = $3 WHERE id = $4 RETURNING *', 'override upsert query is correct');
 });
+
+test('select query from model with where and array_contains', function (t) {
+  t.plan(1);
+
+  var model = new base_model();
+  model.where('some_field').eq(1);
+  model.where('some_other_field').array_contains([1,2,3]);
+  var builder = new query();
+
+  var sql = builder.select(model);
+
+  t.equal(sql, 'SELECT id, some_field, some_other_field, created_date FROM base_model WHERE some_field=$1 AND some_other_field @> ARRAY[ $2, $3, $4 ]', 'where clause select query is correct with array_contains');
+});
