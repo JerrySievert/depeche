@@ -1,6 +1,6 @@
 {
   "name": "depeche",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "My own personal Models",
   "main": "index.js",
   "scripts": {
@@ -10,9 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "extend": "^3.0.1",
-    "pg": "^6.2.3",
-    "redis": "^2.7.1",
-    "sqlite-parser": "^1.0.1"
+    "pg": "^6.2.3"
   },
   "devDependencies": {
     "tap-nyan": "^1.1.0",
