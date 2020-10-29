@@ -1,6 +1,6 @@
 {
   "name": "depeche",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "My own personal Models",
   "main": "index.js",
   "scripts": {
