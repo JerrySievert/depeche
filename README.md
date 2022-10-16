@@ -2,7 +2,7 @@
 
 Fast models.
 
-This is a package used for my personal projects.  It has grown over time, and
+This is a package used for my personal projects. It has grown over time, and
 it made sense to release it as a module.
 
 ## Usage
@@ -14,7 +14,7 @@ $ npm install --save depeche
 _file.js_:
 
 ```
-var Depeche = require('depeche');
+const Depeche = require('depeche');
 
 function Model ( ) {
   this._table = 'model';
@@ -29,7 +29,7 @@ function Model ( ) {
   Depeche.model.extend(this, Model);
 }
 
-var model = new Model();
+const model = new Model();
 ```
 
 ### Configuration
@@ -38,7 +38,7 @@ Configuration occurs once, and is used for all database activity after
 configuration.
 
 ```
-var Depeche = require('depeche');
+const Depeche = require('depeche');
 
 Depeche.db.config({
   username: 'username',
@@ -51,24 +51,21 @@ Depeche.db.config({
 ### Insert
 
 ```
-var model = new Model();
+const model = new Model();
 
 model.some_field = 'Hello';
 model.some_other_fields = 'World';
 
-model.insert(function results (err, rows) {
-  console.log("Inserted " + rows.length);
-});
+const rows - await model.insert();
 ```
 
 ### Query
 
 ```
-var model = new Model();
+const model = new Model();
 
 model.where('some_field').eq('Hello');
 
-model.all(function (err, rows) {
-  console.log("Found " + rows.length);
-});
+const rows = await model.all();
+console.log(`Found ${rows.length} rows`);
 ```
